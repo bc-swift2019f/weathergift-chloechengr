@@ -38,7 +38,7 @@ class PageVC: UIPageViewController {
         
         let safeHeight = view.frame.height - view.safeAreaInsets.bottom
         
-        pageControl = UIPageControl(frame: CGRect(x: (view.frame.width - pageControllWidth) / 2, y: safeHeight - pageControllHeight, width: pageControllWidth, height: pageControllWidth))
+        pageControl = UIPageControl(frame: CGRect(x: (view.frame.width - pageControllWidth) / 2, y: safeHeight - pageControllHeight, width: pageControllWidth, height: pageControllHeight))
         pageControl.pageIndicatorTintColor = UIColor.lightGray
         pageControl.currentPageIndicatorTintColor = UIColor.black
         pageControl.numberOfPages = locationsArray.count
