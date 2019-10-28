@@ -60,10 +60,68 @@
                                     <constraint firstAttribute="height" constant="225" id="6c5-6I-cUR"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gEb-kK-YEJ">
+                                <rect key="frame" x="0.0" y="269" width="414" height="549"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DayWeatherCell" rowHeight="80" id="Znq-Rr-0E9" customClass="DayWeatherCell" customModule="WeatherGift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Znq-Rr-0E9" id="S1O-Jb-wCI">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clear-day" translatesAutoresizingMaskIntoConstraints="NO" id="A96-yZ-mNH">
+                                                    <rect key="frame" x="8" y="5" width="70" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wednesday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCJ-bz-SVN">
+                                                    <rect key="frame" x="86" y="4" width="214" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-45°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsd-bz-NsP">
+                                                    <rect key="frame" x="344" y="4" width="50" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-80°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ku4-Hc-2Bk">
+                                                    <rect key="frame" x="344" y="31" width="50" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="weather description" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edb-we-hfl">
+                                                    <rect key="frame" x="86" y="22" width="242" height="63"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dayCellIcon" destination="A96-yZ-mNH" id="gBL-Tv-Nde"/>
+                                            <outlet property="dayCellMaxTemp" destination="Nsd-bz-NsP" id="Qdw-SO-Zbh"/>
+                                            <outlet property="dayCellMinTemp" destination="Ku4-Hc-2Bk" id="KVQ-rY-BaY"/>
+                                            <outlet property="dayCellSummary" destination="edb-we-hfl" id="15g-Xp-fyi"/>
+                                            <outlet property="dayCellWeekday" destination="kCJ-bz-SVN" id="MWr-f7-Pf3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="gEb-kK-YEJ" firstAttribute="top" secondItem="peb-yr-fsr" secondAttribute="bottom" id="15m-ru-sPf"/>
                             <constraint firstItem="peb-yr-fsr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3uE-3q-4Vs"/>
+                            <constraint firstItem="gEb-kK-YEJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="65c-73-xiQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gEb-kK-YEJ" secondAttribute="bottom" constant="44" id="HRa-ro-UKL"/>
+                            <constraint firstItem="gEb-kK-YEJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Phl-VN-pP7"/>
                             <constraint firstItem="peb-yr-fsr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SPU-hw-1qj"/>
                             <constraint firstItem="peb-yr-fsr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rsv-GE-xNI"/>
                         </constraints>
@@ -74,6 +132,7 @@
                         <outlet property="dataLabel" destination="jjd-az-N2w" id="w03-98-Nvp"/>
                         <outlet property="locationLabel" destination="yta-bk-dva" id="QmJ-Zj-1HN"/>
                         <outlet property="summaryLabel" destination="G5Y-JA-A3c" id="9cD-cQ-cor"/>
+                        <outlet property="tableView" destination="gEb-kK-YEJ" id="SIn-jL-Ys8"/>
                         <outlet property="temperatureLabel" destination="8EB-Mz-Khm" id="jdb-hp-p8r"/>
                     </connections>
                 </viewController>
@@ -159,4 +218,7 @@
             <point key="canvasLocation" x="964" y="-556"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="clear-day" width="384" height="384"/>
+    </resources>
 </document>
